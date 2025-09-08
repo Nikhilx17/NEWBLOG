@@ -1,25 +1,16 @@
-# Decap CMS Configuration for Supplya Blog
-
 backend:
   name: git-gateway
-  branch: main # Or master, depending on your default branch
-
-# ⚠️ IMPORTANT: Replace this with your actual GitHub repo path.
-repo: 'Nikhilx17/NEWBLOG'
-
-# Media files will be stored in the `uploads` folder in the root.
-# The public path will be `/uploads/`.
+  branch: main
+repo: Nikhilx17/NEWBLOG
 media_folder: "uploads"
 public_folder: "/uploads"
-
-# Define the content collections. We only have one: "blog".
 collections:
-  - name: "blog" # Used in routes, e.g., /admin/collections/blog
-    label: "Blog Posts" # Used in the UI
-    folder: "_posts" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template for new posts
-    fields: # The fields for each document, usually in front matter
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Author", name: "author", widget: "string", default: "Supplya Team" }
